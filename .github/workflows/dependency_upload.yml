@@ -1,7 +1,10 @@
-name: Dependency Submission (Manual)
+name: Dependency Submission
 
 on:
   workflow_dispatch:
+  
+permissions:
+  contents: write
 
 jobs:
   dependency-submission:
@@ -17,5 +20,3 @@ jobs:
 
       - name: Generate and submit dependency graph
         uses: gradle/actions/dependency-submission@v3
-        with:
-          dependency-graph: generate-and-upload
